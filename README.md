@@ -166,3 +166,7 @@ Author Information
 Haggai Philip Zagury <hagzag@tikalk.com> part of
 [Shellg](https://github.com/shelleg/shelleg) project.
 see also [Shellg Docs](http://shelleg.github.io/shellegDoc/)
+
+TODO
+----
+- [] Refactor initd script to accept variable system config path

@@ -1,0 +1,3 @@
+---
+# Debian specific vars
+amq_system_config_path: "/etc/default"

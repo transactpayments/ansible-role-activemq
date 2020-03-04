@@ -127,25 +127,13 @@
     state: link
   when: amq_systemd is not defined
 
-- name: "Generate /etc/sysconfig/activemq Redhat"
+- name: "Generate AMQ system config"
   template:
     src: sysconfig_activemq.j2
-    dest: /etc/sysconfig/activemq
+    dest: "{{ amq_system_config_path }}/activemq"
     owner: root
     group: root
     mode: 0755
-  when: ansible_distribution == "CentOS"
-
-# The method below for switching based on OS is deprecated
-# See https://ansible-tips-and-tricks.readthedocs.io/en/latest/os-dependent-tasks/variables/
-- name: "Generate /etc/default/activemq Ubuntu"
-  template:
-    src: sysconfig_activemq.j2
-    dest: /etc/default/activemq
-    owner: root
-    group: root
-    mode: 0755
-  when: ansible_distribution == "Ubuntu"
 
 - name: "Generate systemd service file"
   template:
