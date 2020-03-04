@@ -3,6 +3,7 @@
 #
 - name: set distro-specific variables
   include_vars: '{{ item }}'
+  dir: "vars"
   with_first_found:
     - '{{ ansible_distribution }}.yml'
 
