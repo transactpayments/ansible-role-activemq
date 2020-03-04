@@ -134,6 +134,18 @@
     owner: root
     group: root
     mode: 0755
+  when: ansible_distribution == "CentOS"
+
+# The method below for switching based on OS is deprecated
+# See https://ansible-tips-and-tricks.readthedocs.io/en/latest/os-dependent-tasks/variables/
+- name: "Generate /etc/default/activemq Ubuntu"
+  template:
+    src: sysconfig_activemq.j2
+    dest: /etc/default/activemq
+    owner: root
+    group: root
+    mode: 0755
+  when: ansible_distribution == "Ubuntu"
 
 - name: "Generate systemd service file"
   template:
